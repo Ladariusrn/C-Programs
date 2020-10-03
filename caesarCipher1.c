@@ -1,11 +1,11 @@
 /*
    Title: Caesar Cipher
    Description: This program takes in a plain text and produces a cipher of that text using the Caesar Cipher
-   Usage: Please enter the plain text you want to encrypt: defend
-          The ciphered text is with (key shift = 1): efgfoe
+   Usage: Please enter the plain text you want to encrypt: uab
+          The ciphered text is with (key shift = 3): xde
           
    How it work: Suppose Letter = a = 0, b=1, c=2, d=3, e=4
-                key = 1
+                key = 3
                 ((int)Letter + key) mod 26 ==> returns the ciphered letter as a number, cipherValue
                                            ==> (char)cipherValue = '[some letter]'
                                            
@@ -21,7 +21,7 @@ void caesarCipher(char* plainText, int key);
 
 int main(void){
 	
-	int key = 1;
+	int key = 3;
 	char plainText[101];
 	
 	//Ask the user for the plain text to encrypt
@@ -45,7 +45,7 @@ void caesarCipher(char* plainText, int key){
 	int cypherValue;
 	char cypher;
 	
-	while( plainText[i] != '\0' && strlen(plainText)-1 > i){
+	while( plainText[i] != '\0' && strlen(plainText)-3 > i){
 		cypherValue = ((int)plainText[i] -97 + key) % 26 + 97;
 		cypher = (char)(cypherValue);
 		
